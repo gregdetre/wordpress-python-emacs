@@ -3,7 +3,7 @@ import os
 import pprint
 import sys
 
-from grab_post_titles import get_all_posts
+from get_posts import get_all_posts
 from utils import *
 
 """
@@ -11,7 +11,7 @@ Feed in a text file to create/update a Wordpress post.
 
 Wordpress login credentials specified by the .password file read by utils.login().
 
-Uses grab_post_titles.get_all_posts() to check for an
+Uses get_posts.get_all_posts() to check for an
 existing post with the same title (case-insensitive,
 includes both draft + published). If one exists, it updates
 it based on the filename and contents, otherwise it creates

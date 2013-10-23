@@ -2,7 +2,7 @@ from argparse import ArgumentParser
 import codecs
 import os
 
-from grab_post_titles import get_all_posts
+from get_posts import get_all_posts
 from utils import *
 
 wp = login()

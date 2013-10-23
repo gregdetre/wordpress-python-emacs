@@ -1,7 +1,7 @@
 from utils import *
 
 """
-python grab_post_titles.py
+python get_posts.py
 
 OR
 
