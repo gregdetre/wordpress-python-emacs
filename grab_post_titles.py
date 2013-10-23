@@ -8,7 +8,7 @@ OR
 posts = get_all_posts(verbose=True)
 print posts[0].content
 
-(Pdb) dir(post)
+(Pdb) dir(posts[0])
 [... 'comment_status', 'content', 'custom_fields', 'date', 'date_modified', 'definition', 'excerpt', 'guid', 'id', 'link', 'menu_order', 'mime_type', 'parent_id', 'password', 'ping_status', 'post_format', 'post_status', 'post_type', 'slug', 'sticky', 'struct', 'terms', 'thumbnail', 'title', 'user']
 """
 
