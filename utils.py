@@ -1,4 +1,4 @@
-from wordpress_xmlrpc import Client, WordPressPost
+from wordpress_xmlrpc import Client, WordPressPost, WordPressPage
 from wordpress_xmlrpc.methods.posts import GetPosts, NewPost, EditPost
 from wordpress_xmlrpc.methods.users import GetUserInfo
 
