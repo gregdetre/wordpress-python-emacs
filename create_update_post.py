@@ -37,7 +37,7 @@ def create_update_post(filen, post_status=None):
         post = update_post(existing_post, filen, title=title, post_status=post_status, verbose=True)
     else:
         post = create_post(filen, title, post_status=post_status, verbose=True)
-    created = not not existing_post
+    created = not existing_post
     return post, created
     
 
