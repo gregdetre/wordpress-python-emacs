@@ -38,12 +38,13 @@ def get_all_posts(verbose=False, increment=50, post_status=None, post_type=None)
 def get_some_posts(offset=0, increment=20,
                    post_status='publish',
                    post_type='post'):
+    if post_type is None:
+        post_type = 'post'
     d = {'number': increment,
-         'offset': offset}
+         'offset': offset,
+         'post_type': post_type,}
     if post_status is not None:
         d['post_status'] = post_status
-    if post_type is not None:
-        d['post_type'] = post_type
     if post_type == 'post':
         results_class = WordPressPost
     elif post_type == 'page':
