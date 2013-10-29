@@ -11,13 +11,13 @@ wp = login()
 """
 e.g.
 
-  python ~/dev/wordpress/write_all_posts.py -d ~/Desktop/writing/publish --post-status publish
-  python ~/dev/wordpress/write_all_posts.py -d ~/Desktop/writing/draft --post-status draft
+  python ~/dev/wordpress/download_posts.py -d ~/Desktop/writing/publish --post-status publish
+  python ~/dev/wordpress/download_posts.py -d ~/Desktop/writing/draft --post-status draft
 
 """
 
 
-def write_posts(directory, post_status=None):
+def download_all_posts(directory, post_status=None):
     directory = os.path.abspath( os.path.expanduser(directory) )
 
     if not os.path.exists(directory):
@@ -55,7 +55,7 @@ if __name__ == "__main__":
                         )
     args = vars(parser.parse_args())
     
-    write_posts(directory=args['directory'],
-                post_status=args['post_status'])
+    download_all_posts(directory=args['directory'],
+                       post_status=args['post_status'])
 
 
