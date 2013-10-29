@@ -54,6 +54,9 @@ def get_some_posts(offset=0, increment=20,
     for item in items:
         if not item.title:
             item.title = '(no title)'
+    # if you want the parent category Page's id, see
+    # item.parent_id - though you would then have to look
+    # up the title for that id
     return items
 
 
