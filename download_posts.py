@@ -17,14 +17,14 @@ e.g.
 """
 
 
-def download_all_posts(directory, post_status=None):
+def download_all_posts(directory, post_status=None, post_type=None):
     directory = os.path.abspath( os.path.expanduser(directory) )
 
     if not os.path.exists(directory):
         print 'Creating directory: %s' % directory
         os.makedirs(directory)
 
-    posts = get_all_posts(post_status=post_status, verbose=False)
+    posts = get_all_posts(post_status=post_status, post_type=post_type, verbose=False)
     for post in posts:
         if not post.title:
             # actually, Wordpress allows posts without
@@ -53,9 +53,15 @@ if __name__ == "__main__":
                         default=None,
                         help='If specified, will filter to POST_STATUS, otherwise doesn\'t filter by POST_STATUS'
                         )
+    parser.add_argument('--post-type',
+                        type=str,
+                        default='post',
+                        help='By default, grabs Posts. Set to "page" for Pages'
+                        )
     args = vars(parser.parse_args())
     
     download_all_posts(directory=args['directory'],
-                       post_status=args['post_status'])
+                       post_status=args['post_status'],
+                       post_type=args['post_type'])
 
 
