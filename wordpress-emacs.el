@@ -6,7 +6,9 @@
                               (concat "--post-status " post-status)
                             ""))
          ;; you may need to hardcode this to point to create_update_post.py
-         (cmd (format "python create_update_post.py -f '%s' %s" filen post-status-str)))
+         (cmd (format "python create_update_post.py -f '%s' %s"
+                      filen
+                      post-status-str)))
       (message cmd)
       (shell-command cmd)
       ))
